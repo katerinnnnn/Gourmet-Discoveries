@@ -1,0 +1,18 @@
+{
+  "meals":[
+    {
+      "idMeal":"52771",
+      "strMeal":"Spicy Arrabiata Penne",
+      "strCategory":"Vegetarian",
+      "strArea":"Italian",
+      "strInstructions":"Bring a large pot of water to a boil...",
+      "strMealThumb":"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
+      "strIngredient1":"penne rigate",
+      "strMeasure1":"1 pound",
+      "strIngredient2":"olive oil",
+      "strMeasure2":"1/4 cup",
+      "strIngredient3":"garlic",
+      "strMeasure3":"3 cloves"
+    }
+  ]
+}

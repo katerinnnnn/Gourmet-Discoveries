@@ -40,8 +40,8 @@
 
                 $food = $_GET['searchInput'] ?? '';
                  if (!$food){
-                 die("No search found");
-                }       
+                 echo "No search found";
+                }      
                 $url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" . urlencode($food);
         
                 $ch = curl_init();
@@ -70,7 +70,7 @@
                         echo "<p><strong>Category:</strong> " . $meal['strCategory'] . "</p>";
                         echo "<p><strong>Area:</strong> " . $meal['strArea'] . "</p>";
 
-                        echo "<a href='view.php?id=" . $meal['idMeal'] . "' class='view-btn'>View Details</a>";
+                        echo "<a href='view.php?id=" . $meal['idMeal'] . "&searchInput=". urlencode($food) . "' class='view-btn'>View Details</a>";
  
                         echo "</div>";
                     }

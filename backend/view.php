@@ -63,6 +63,35 @@
     <h2>Instructions</h2>
     <p><?php echo nl2br($meal['strInstructions']); ?></p>
 
-    <a href="results.php">Back to results</a>
+    <?php 
+        if (!empty($_GET['searchInput'])) {
+    $back = "results.php?searchInput=" . urlencode($_GET['searchInput']);
+            } 
+    else {
+    
+    $back = "index2.php";
+            }
+
+    echo "<a href='$back'>Back to results</a>";
+
+    ?>
+    <h2>Add to Favorites</h2>
+
+<form action="favorite_table.php" method="POST">
+    <input type="hidden" name="meal_id" value="<?php echo $meal['idMeal']; ?>">
+    <input type="hidden" name="name" value="<?php echo $meal['strMeal']; ?>">
+    <input type="hidden" name="category" value="<?php echo $meal['strCategory']; ?>">
+    <input type="hidden" name="area" value="<?php echo $meal['strArea']; ?>">
+    <input type="hidden" name="instructions" value="<?php echo htmlspecialchars($meal['strInstructions'], ENT_QUOTES); ?>">
+    <input type="hidden" name="thumbnail" value="<?php echo $meal['strMealThumb']; ?>">
+
+    <label>Add your own tags:</label><br>
+    <input type="text" name="tags" placeholder="e.g., Spicy, Budget, Dinner">
+
+    <br><br>
+    <button type="submit">Save to Favorites</button>
+</form>
+
+
 </body>
 </html>

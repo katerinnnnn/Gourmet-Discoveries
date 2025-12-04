@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
       <html lang="en">
       <head>
             <meta charset="UTF-8">
@@ -22,17 +22,12 @@
       form { margin-bottom: 20px; }
       </style>
       </head>
-      <body>
       
-
-      
-
-
       <body>
             <nav id="nav1">
                   <div id="heather">
                   <ul id="navLinks">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index2.php">Home</a></li>
                         <li><a href="/backend/recipes.php" target="_blank">Show</a></li>
                         
                         <li><a href="#aboutUs">About Us</a></li>
@@ -48,55 +43,19 @@
                   
                   <div>
                         <h1>Search Recipes</h1>
-                        <form id="searchForm">
-                        <input type="text" id="searchInput" placeholder="Search recipe..." required>
+                        <form method="GET" action="backend/results.php">
+                        <input type="text" name="searchInput" placeholder="Search recipe..." required>
                         <button type="submit">Search</button>
                         </form>
-
-                        <div id="searchResults" class="dish-container"></div>
-                        <script src="search.js"></script>
                   </div>
 
       <!--Category page-->
                   
             </main>
-
-            <script src="gd.js"></script>
-
             <!-- <footer>
                   <p>Copyright &#169 4 Gourmet Discoveries. All Rights Reserved.</p>
             </footer> -->
       </body>
-      </html>
+</html>
 
-      <script>
-            const searchForm = document.getElementById('searchForm');
-      const searchInput = document.getElementById('searchInput');
-      const resultsContainer = document.getElementById('searchResults');
-
-      searchForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      if (!query) return;
-
-      const res = await fetch(`backend/recipes.php?q=${encodeURIComponent(query)}`);
-      const data = await res.json();
-      
-      resultsContainer.innerHTML = '';
-      if (data.length > 0) {
-            data.forEach(recipe => {
-                  resultsContainer.innerHTML += `
-                  <div class="recipe-card">
-                        <img src="${recipe.strMealThumb || recipe.thumbnail}" alt="${recipe.strMeal || recipe.name}" />
-                        <h3>${recipe.strMeal || recipe.name}</h3>
-                        <p>${recipe.strCategory || recipe.category}</p>
-                        <p>${recipe.strArea || recipe.area}</p>
-                  </div>
-                  `;
-            });
-      } else {
-            resultsContainer.innerHTML = '<p>No recipes found.</p>';
-      }
-      });
-
-      </script>
+   

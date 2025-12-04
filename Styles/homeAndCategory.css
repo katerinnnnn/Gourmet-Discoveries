@@ -45,7 +45,7 @@ nav {
 
 #home {
    padding-top: 100px;
-   background-image: url("/Pictures/HomePic.png");
+   background-image: url("../Pictures/HomePic.png");
    background-attachment: initial;
    background-repeat: no-repeat;
    background-size: 1550px 750px;
